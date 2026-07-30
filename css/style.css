@@ -1,0 +1,173 @@
+
+.accordion-item, .accordion-button, .accordion-body, .accordion-collapse, .accordion-header, .accordion-button:not(.collapsed) {
+    background: #525252;
+    color: #ffffff;
+    
+    
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #333;
+}
+
+.accordion {
+    padding: 1rem;
+
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+}
+
+.accordion-button {
+    border: none;
+    
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+.donation-panel {
+    color: #ffffff;
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    background: none
+}
+
+.music-panel {
+    flex: 0 0 auto;
+    height: 100vh;
+    aspect-ratio : 2/3;
+    display: flex;
+    flex-direction: column;
+    background: #303030
+}
+
+.music-panel iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+    border: 0;
+}
+
+.donate-btn {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    white-space: nowrap;
+    border-radius: 2rem;
+}
+
+.org-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.accordion-button {
+    border: none;
+    padding: 0.5rem 1.25rem;
+    /* was ~1rem by default, this cuts it down */
+}
+
+.org-logo {
+    width: 36px;
+    /* was 50px */
+    height: 36px;
+    margin-right: 10px;
+    /* was 15px */
+}
+
+.accordion-item {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 6px solid #525252;
+    /* was 10px, thinner border = slimmer look */
+}
+
+.accordion-item:first-of-type,
+.accordion-item:last-of-type,
+.accordion-item {
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 10px solid #525252;
+}
+
+/* MOBILE */
+@media (max-aspect-ratio: 3/2) {
+    .layout {
+        flex-direction: column;
+        height: 100vh;
+    }
+    
+    .donation-panel {
+        overflow-y: auto;
+        height: calc(100vh - 300px);
+        padding-bottom: 0;
+    }
+
+    .music-panel {
+        position: fixed;
+        bottom: 0;
+        left:0;
+        width: 100%;
+        height: 300px;
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.accordion-item:not(:first-of-type) {
+    border-top: 10px solid #525252;
+}
+.page-intro {
+    padding: 2rem 2rem 0;
+    max-width: 900px;
+    color: #cccccc;
+}
+
+body {
+    position: relative;
+    /* needed so the pseudo-element can position against it */
+    color: #ffffff;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: calc(var(--scroll, 0px) * -1);
+    left: 0;
+    width: 100%;
+    height: 120%;
+    z-index: -2;
+
+    background-image: url('../images/Cover.jpg');
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    /* the dark overlay — adjust 0.6 for more/less darkness */
+}
