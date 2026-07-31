@@ -157,9 +157,15 @@ window.addEventListener("resize", updatePlayer);
 
 const donationPanel = document.querySelector(".donation-panel");
 
-donationPanel.addEventListener("scroll", () => {
-    document.body.style.setProperty(
-        "--scroll",
-        donationPanel.scrollTop * 0.2 + "px"
-    );
-});
+function updateParallax() {
+    const maxScroll =
+        donationPanel.scrollHeight - donationPanel.clientHeight;
+
+    const progress =
+        donationPanel.scrollTop / maxScroll;
+
+    document.body.style.setProperty("--scroll-progress", progress);
+}
+
+donationPanel.addEventListener("scroll", updateParallax);
+updateParallax();
