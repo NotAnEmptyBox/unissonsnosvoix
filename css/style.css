@@ -1,9 +1,13 @@
-
-.accordion-item, .accordion-button, .accordion-body, .accordion-collapse, .accordion-header, .accordion-button:not(.collapsed) {
+.accordion-item,
+.accordion-button,
+.accordion-body,
+.accordion-collapse,
+.accordion-header,
+.accordion-button:not(.collapsed) {
     background: #525252;
     color: #ffffff;
-    
-    
+
+
 }
 
 .accordion-button:focus {
@@ -22,7 +26,7 @@
 
 .accordion-button {
     border: none;
-    
+
 }
 
 .accordion-button::after {
@@ -45,7 +49,7 @@
 .music-panel {
     flex: 0 0 auto;
     height: 100vh;
-    aspect-ratio : 2/3;
+    aspect-ratio: 2/3;
     display: flex;
     flex-direction: column;
     background: #303030
@@ -109,7 +113,7 @@
         flex-direction: column;
         height: 100vh;
     }
-    
+
     .donation-panel {
         flex: none;
         overflow-y: auto;
@@ -119,7 +123,7 @@
     .music-panel {
         position: fixed;
         bottom: 0;
-        left:0;
+        left: 0;
         width: 100%;
         height: 300px;
         z-index: 1000;
@@ -132,10 +136,62 @@
 .accordion-item:not(:first-of-type) {
     border-top: 10px solid #525252;
 }
-.page-intro {
+
+.intro-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
     padding: 2rem 2rem 0;
+    flex-wrap: wrap;
+}
+
+.page-intro {
+    flex: 1 1 400px;
     max-width: 900px;
     color: #cccccc;
+    padding: 0;
+}
+
+.video-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+    border-radius: 1rem;
+    display: block;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #525252;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    transition: background 0.2s;
+    align-self: flex-start;
+}
+
+.social-link:hover {
+    background: #6a6a6a;
+    color: #ffffff;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
 }
 
 body {
@@ -180,6 +236,7 @@ body::after {
     font-weight: bold;
     margin-bottom: 0rem;
 }
+
 .titre-projet {
     font-size: 2.5rem;
     font-weight: bold;
@@ -199,9 +256,17 @@ body::after {
 }
 
 html {
-    
+
     scrollbar-width: thin;
     /* Options: auto, thin, none */
     scrollbar-color: #525252 #303030;
     /* format: "thumb_color track_color" */
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 0 1rem;
+    margin: 1rem 0 0;
+    color: #ffffff;
 }
