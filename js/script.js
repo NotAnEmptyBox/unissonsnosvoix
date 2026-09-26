@@ -121,7 +121,7 @@ const organizations = [
         donateUrl: "https://dons.medecinsdumonde.ca/JLT2017GENERAL/?lng=0"
     },
     {
-        name: "Le P.A.S. de la rue",
+        name: "Le PAS de la rue",
         logo: "images/pas-de-la-rue-logo.jpg",
         mission: "Organisme qui aide les aînés de 55 ans et plus en situation d'itinérance ou à risque de le devenir à reprendre le contrôle de leur vie, par des centres de jour, des repas, du soutien psychosocial et un accompagnement en logement.",
         donateUrl: "https://pasdelarue.org/donner/"
